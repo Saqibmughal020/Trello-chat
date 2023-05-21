@@ -1,0 +1,16 @@
+.frequenlty-asked-question {
+  .css-l260it-MuiPaper-root-MuiAccordion-root.Mui-expanded {
+    margin: 0 !important;
+  }
+  input {
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 15px;
+    width: 50vh;
+    font-family: "poppins";
+    ::placeholder {
+      font-family: "poppins";
+    }
+  }
+}

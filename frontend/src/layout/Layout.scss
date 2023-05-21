@@ -1,0 +1,109 @@
+.layout {
+  height: 100vh;
+
+  .layout-inner {
+    display: flex;
+    background-color: #202c33f3;
+    .layout-sidebar {
+      border-top-right-radius: 30px;
+      border-bottom-right-radius: 30px;
+    }
+  }
+
+  .layout-content {
+    height: 100vh;
+    width: calc(100% - 400px);
+    transition: all 0.5s;
+
+    .outlet {
+      // height: 100vh;
+      overflow-y: auto;
+      position: absolute;
+      top: 0;
+      margin-top: 50px;
+      bottom: 0;
+      width: calc(100% - 400px);      // margin-top: 50px;
+      // margin: 0px 1%;
+      // position: relative;
+      // top: -50px;
+      // border-radius: 8px;
+      // box-shadow: 0px 0px 8px rgba(193, 227, 255, 0.47);
+
+      /* width */
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+
+    .outlet-system-admin {
+      top: 0;
+      // height: 100vh;
+    }
+  }
+
+  // .layout-content-close {
+  //   height: 93vh;
+  //   width: calc(100% - 60px);
+
+  //   .outlet {
+  //     height: 90vh;
+  //     overflow-y: auto;
+  //     padding: 0px 1%;
+  //     // box-shadow: 0px 0px 8px rgba(193, 227, 255, 0.47);
+
+  //     /* width */
+  //     &::-webkit-scrollbar {
+  //       display: none;
+  //     }
+  //   }
+
+  //   .outlet-system-admin {
+  //     top: 0;
+  //     padding-top: 30px;
+  //   }
+  // }
+}
+
+// @media screen and (max-width: 1440px) {
+//   .layout {
+//     .layout-content {
+//       .outlet {
+//         top: -25px;
+//         height: 71vh;
+//       }
+//     }
+//     .layout-content-close {
+//       height: 88vh;
+
+//       .outlet {
+//         height: 65vh;
+//       }
+//     }
+//   }
+// }
+
+@media screen and (max-width: 600px) {
+  .layout {
+    .layout-content,
+    .layout-content-close {
+      height: unset !important;
+
+      .outlet {
+        height: unset !important;
+        margin: 0px 10px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .layout {
+    .layout-content {
+      height: 88vh;
+
+      .outlet {
+        height: 64vh;
+      }
+    }
+  }
+}

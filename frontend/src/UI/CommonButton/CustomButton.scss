@@ -1,0 +1,110 @@
+.custom-button-common {
+  display: block;
+  min-height: 45px;
+  position: relative;
+  border: 1px solid #154128;
+  background: linear-gradient(to top, #154128 50%, #fff 50%);
+  background-size: 100% 220%;
+  background-position: top;
+  transition: all 0.35s ease-out;
+  color: #154128;
+  font-size: 15px;
+  box-shadow: none;
+  border-radius: 8px;
+  text-transform: unset;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  cursor: pointer;
+  font-family: "poppins";
+  font-weight: 500;
+
+  &:hover {
+    background-position: bottom;
+    color: #fff;
+    box-shadow: none;
+
+    #arrow_1 .arrow {
+      $size: 10px;
+
+      & span,
+      &:before,
+      &:after {
+        background: #fff;
+      }
+
+      span {
+        background: white;
+        width: 35px;
+      }
+
+      @each $direction in "left" "right" {
+        &.arrow--#{$direction} {
+          & span,
+          &:before,
+          &:after {
+            #{$direction}: $size / 1.414 * -1;
+          }
+        }
+      }
+    }
+  }
+
+  .btn-filled {
+    background-color: rgb(21, 65, 40);
+    color: #fff;
+  }
+
+  #arrow_1 .arrow {
+    $size: 7px;
+    $width: 2px;
+    width: $size / 1.414;
+    height: $size / 1.414 * 2;
+    position: absolute;
+    top: calc(50% - (#{$width} / 2));
+    left: 1em;
+
+    & span,
+    &:before,
+    &:after {
+      background: #19456a;
+      content: "";
+      display: block;
+      width: $size;
+      height: $width;
+      position: absolute;
+    }
+
+    &:before {
+      transform: rotate(-45deg);
+    }
+
+    &:after {
+      transform: rotate(45deg);
+    }
+
+    span {
+      width: 25px;
+    }
+
+    @each $direction in "left" "right" {
+      &.arrow--#{$direction} {
+        & span,
+        &:before,
+        &:after {
+          #{$direction}: 0;
+          transform-origin: #{$direction} 50%;
+        }
+
+        &:before,
+        &:after {
+          transition: #{$direction} 0.3s 0.05s;
+        }
+
+        & span {
+          transition: width 0.3s, #{$direction} 0.3s 0.05s;
+        }
+      }
+    }
+  }
+}
